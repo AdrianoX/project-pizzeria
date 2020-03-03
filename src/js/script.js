@@ -1,5 +1,4 @@
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
-
 {
   'use strict';
 
@@ -60,8 +59,8 @@
       thisProduct.id = id;
       thisProduct.data = data;
 
-      thisProduct.initAccordion();
       thisProduct.renderInMenu();
+      thisProduct.initAccordion();
 
       console.log('new Product:', thisProduct);
     }
@@ -101,28 +100,11 @@
         /* prevent default action for event */
         event.preventDefault();
 
-        /* toggle active class on element of thisProduct */
-        clickableTrigger.classList.toggle('active');     
-        //thisProduct.element.classList.toggle('active');   <-- second option ?
+        const activeProduct = document.querySelector('.product.active');
+        if(activeProduct && activeProduct != clickableTrigger) activeProduct.classList.remove('active');
+        clickableTrigger.classList.toggle('active');
 
-        /* find all active products */
-        const activeProducts = document.querySelectorAll('active');
-        console.log('activeProducts:', activeProducts);
-
-        /* START LOOP: for each active product */
-        for(let activeProduct of activeProducts) {
-
-          /* START: if the active product isn't the element of thisProduct */
-          if(activeProduct !== clickableTrigger) {
-
-            /* remove class active for the active product */
-            activeProduct.classList.remove('acitve');
-
-          /* END: if the active product isn't the element of thisProduct */
-          }
-        /* END LOOP: for each active product */
-        }
-      /* END: click event listener to trigger */      
+      /* END: click event listener to trigger */
       });
     }
   }
@@ -141,7 +123,7 @@
       const thisApp = this;
 
       thisApp.data = dataSource;
-    
+
     },
 
     init: function(){
@@ -158,7 +140,7 @@
     },
   };
 
-  
+
 
   app.init();
 }
