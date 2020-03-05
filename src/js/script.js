@@ -100,6 +100,7 @@
       //console.log('THIS PRODUCT:', thisProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       //console.log('THIS PRODUCT:', thisProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
 
@@ -187,6 +188,23 @@
     
           /* END ELSE IF: if option is not selected and option is default */
           }
+
+          // [DONE] Create const with products images that have parameter key (paramId) and option key (optionId)
+          const images = thisProduct.imageWrapper.querySelectorAll('.' + paramId + '-' + optionId);
+          console.log('images:', images);
+          // [DONE] Start "if" product have image and is currently selected
+          if (optionSelected){
+            // [DONE] Add class active image (if selected) 
+            for(let image of images){
+              image.classList.add(classNames.menuProduct.imageVisible);
+            }
+            // [DONE] Else remove class active when product isn't selected
+          } else {
+            for (let image of images){
+              image.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          }
+        
         /* END LOOP: for each optionId in param.options */
         } 
       /* END LOOP: for each paramId in thisProduct.data.params */
