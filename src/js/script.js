@@ -259,12 +259,15 @@
 
       /* TODO: Add validation */
 
-      if (newValue >= settings.amountWidget.defaultMin &&
-          newValue <= settings.amountWidget.defaultMax) 
-    
-
-      thisWidget.value = newValue;
-      thisWidget.announce();
+      if (
+        newValue != thisWidget.value && // <-- still working properly without this line  : )
+        newValue >= settings.amountWidget.defaultMin &&
+        newValue <= settings.amountWidget.defaultMax
+      ) 
+      {
+        thisWidget.value = newValue;
+        thisWidget.announce();
+      }
       thisWidget.input.value = thisWidget.value;
     }
 
