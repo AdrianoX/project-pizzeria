@@ -369,8 +369,8 @@
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
       console.log('thisCart.dom.toggleTrigger:', thisCart.dom.toggleTrigger);
 
-      thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
-      console.log('thisCart.dom.productList:', thisCart.dom.toggleTrigger);
+      thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
+      console.log('thisCart.dom.productList:', thisCart.dom.productList);
     }
 
     initActions(){
