@@ -448,12 +448,12 @@
       const thisCart = this;
       const index = thisCart.products.indexOf(cartProduct);
 
-      const removeItem = thisCart.products.splice();
+      const removeItem = thisCart.products.splice(index);
       //thisCart.products.splice(index);    <-- second option instead of upper code line (const removeItem = thisCart.products.splice(index,1));
       console.log('REMOVE ITEM:', removeItem);
 
       cartProduct.dom.wrapper.remove();
-
+      thisCart.update();
     }
 
   }
