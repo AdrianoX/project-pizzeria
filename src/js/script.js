@@ -594,14 +594,16 @@
 
       const productData = {
 
-        prodcutData.id = thisCartProduct.id;
-        prodcutData.amount = thisCartProduct.amount;
-        prodcutData.price = thisCartProduct.price;
-        prodcutData.priceSingle = thisCartProduct.priceSingel;
-        prodcutData.params = thisCartProduct.params;
-      };     
-    }
+        id : thisCartProduct.id,
+        amount : thisCartProduct.amount,
+        price : thisCartProduct.price,
+        priceSingle : thisCartProduct.priceSingel,
+        params : thisCartProduct.params,
+      };
 
+      return productData;
+    
+    }
   }
 
   const app = {
