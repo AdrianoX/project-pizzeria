@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+
 import {select, settings} from '../settings.js';
 
 
