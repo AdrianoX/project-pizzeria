@@ -105,14 +105,14 @@ const app = {
         thisApp.initMenu();
       });
       
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
+    //console.log('thisApp.data', JSON.stringify(thisApp.data));
       
   },
 
   initBooking: function(){
     const thisApp = this;  
 
-    const bookingWidget = document.querySelector(select.cointainerOf.booking);
+    const bookingWidget = document.querySelector(select.containerOf.booking);
     thisApp.booking = new Booking(bookingWidget);
 
   },
