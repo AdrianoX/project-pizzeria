@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 
-import {select, settings} from './settings.js';
+import {select, settings} from '../settings.js';
 import BaseWidget from './BaseWidget.js';
 import utils from '../utils.js';
 
@@ -10,15 +10,22 @@ class HourPicker extends BaseWidget{
     
     const thisWidget = this;
 
-    thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.datePicker.input);
-    thisWidget.dom.output = thisWidget.dom.wrapper.querySelector(select.widgets.dataPicker.output);
+    thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.input);
+    thisWidget.dom.output = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.output);
     
     thisWidget.initPlugin();
+    thisWidget.value = thisWidget.dom.input.value;
   }
     
   initPlugin(){
     const thisWidget = this;
-    
+
+    // eslint-disable-next-line no-undef
+    rangeSlider.create(thisWidget.dom.input);
+
+    thisWidget.dom.input.addEventListener('input', function(){
+      thisWidget.value = thisWidget.dom.input.value;
+    });   
   }
 
   parseValue(value){
