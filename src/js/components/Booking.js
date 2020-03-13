@@ -21,17 +21,14 @@ class Booking{
     thisBooking.dom.wrapper = bookingWidget;
 
     thisBooking.dom.wrapper.innerHTML = generatedHTML;
-    //bookingWidget.innerHTML = generatedHTML; <-- w/o dom.wrapper examp.
 
     thisBooking.dom.peopleAmount = thisBooking.dom.wrapper.querySelector(select.booking.peopleAmount);
     thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(select.booking.hoursAmount);
-    // thisBooking.dom.peopleAmount = bookingWidget.querySelector(select.booking.peopleAmount);  <-- w/o dom.wrapper
-    // thisBooking.dom.hoursAmount = bookingWidget.querySelector(select.booking.hoursAmount); <-- w/o dom.wrapper
+
     thisBooking.dom.datePicker = bookingWidget.querySelector(select.widgets.datePicker.wrapper);
     thisBooking.dom.hourPicker = bookingWidget.querySelector(select.widgets.hourPicker.wrapper);
 
-    console.log(select.booking.peopleAmount);
-
+    //console.log(select.booking.peopleAmount);
   }
 
   initWidgets(){
@@ -44,7 +41,6 @@ class Booking{
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
 
   }
-
 }
 
 export default Booking;
