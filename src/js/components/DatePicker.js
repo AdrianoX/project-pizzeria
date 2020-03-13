@@ -40,6 +40,17 @@ class DatePicker extends BaseWidget{
       },      
     });
   }
+
+  parseValue(value){
+    return value;
+  }
+
+  isValid(){
+    return true;
+  }
+
+  renderValue(){
+  }
 }
 
 export default DatePicker;
