@@ -90,8 +90,6 @@ class Booking {
       }
     }    
 
-    //console.log('thisBooking.booked', thisBooking.booked);
-
     thisBooking.updateDOM();
   }
 
@@ -104,11 +102,8 @@ class Booking {
 
     const startHour = utils.hourToNumber(hour);
 
-
     for(let hourBlock = startHour; hourBlock < startHour + duration; hourBlock+= 0.5){
-      //console.log('loop', hourBlock);
 
-      
       if(typeof thisBooking.booked[date][hourBlock] == 'undefined'){
         thisBooking.booked[date][hourBlock] = [];
       }
@@ -169,7 +164,6 @@ class Booking {
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(select.booking.tables);
 
   }
-
 
   initWidgets(){
     const thisBooking = this;
