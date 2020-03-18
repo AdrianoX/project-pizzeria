@@ -8,9 +8,11 @@ import HourPicker from './HourPicker.js';
 
 class Booking {
   constructor(bookingWidget) {
-    this.render(bookingWidget);
-    this.initWidgets();
-    this.getData();
+    const thisBooking = this;
+
+    thisBooking.render(bookingWidget);
+    thisBooking.initWidgets();
+    thisBooking.getData();
   }
 
   getData() {
@@ -122,10 +124,10 @@ class Booking {
     let allAvailable = false;
 
     if (
-      typeof thisBooking.booked[thisBooking.date] === 'undefined' ||
-      typeof thisBooking.booked[thisBooking.date][thisBooking.hour] ===
-        'undefined'
-    ) {
+      typeof thisBooking.booked[thisBooking.date] == 'undefined' 
+      ||
+      typeof thisBooking.booked[thisBooking.date][thisBooking.hour] == 'undefined'        
+    ){
       allAvailable = true;
     }
 
@@ -138,12 +140,13 @@ class Booking {
       }
 
       if (
-        !allAvailable &&
+        !allAvailable 
+        &&
         thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
       ) {
         table.classList.add(classNames.booking.tableBooked);
       } else {
-        table.classList.remove(classNames.booking.tablebooked);
+        table.classList.remove(classNames.booking.tableBooked);
       }
     }
   }
