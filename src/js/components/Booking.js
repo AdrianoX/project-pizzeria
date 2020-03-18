@@ -180,7 +180,60 @@ class Booking {
       thisBooking.updateDOM();
       console.log('Running updateDOM for addListener');
     });
+
+    thisBooking.selectTable();
   }
+
+  selectTable(){
+    const thisBooking = this;
+
+    for(let table of thisBooking.dom.tables){
+      table.addEventListener('click', function(){
+        if (table.classList.contains(classNames.booking.tableBooked)){
+          alert('Sorry, this table is currently reserved! Please choose other table : )');
+        } else {
+          table.classList.add(classNames.booking.tableBooked);
+        }
+      });
+    }
+  }
+
+  /* sendOrder(){       // <- Example from Cart.js
+    const thisCart = this;
+
+    const url = settings.db.url + '/' + settings.db.order;
+
+    const payload = {
+      address: thisCart.dom.address.value,
+      phone: thisCart.dom.phone.value,
+      totalNumber: thisCart.totalNumber,
+      subtotalNumber: thisCart.subtotalNumber,
+      totalPrice: thisCart.totalPrice,
+      deliveryFee: thisCart.deliveryFee,
+      products: [],
+    };
+
+    for(let product of thisCart.products){
+      payload.products.push(product.getData());
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    };
+
+    fetch(url, options)
+      .then(function(response){
+        return response.json();
+      }).then(function(parsedResponse){
+        console.log('parsedResponse', parsedResponse);
+      });
+
+  } */
+
 }
 
 export default Booking;
