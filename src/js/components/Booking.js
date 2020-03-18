@@ -7,8 +7,8 @@ import DatePicker from './DatePicker.js';
 import HourPicker from './HourPicker.js';
 
 class Booking {
-  constructor(bookingElem) {
-    this.render(bookingElem);
+  constructor(bookingWidget) {
+    this.render(bookingWidget);
     this.initWidgets();
     this.getData();
   }
@@ -91,6 +91,7 @@ class Booking {
     }    
 
     thisBooking.updateDOM();
+    console.log('running updateDOM');
   }
 
   makeBooked(date, hour, duration, table){
@@ -128,6 +129,8 @@ class Booking {
       allAvailable = true;
     }
 
+    //console.log('thisBooking.dom.tables', thisBooking.dom.tables);
+
     for (let table of thisBooking.dom.tables) {
       let tableId = table.getAttribute(settings.booking.tableIdAttribute);
       if (!isNaN(tableId)) {
@@ -145,24 +148,21 @@ class Booking {
     }
   }
 
-  render(bookingElem) {
+  render(bookingWidget){
     const thisBooking = this;
 
     const generatedHTML = templates.bookingWidget();
 
     thisBooking.dom = {};
-    thisBooking.dom.wrapper = bookingElem;
-    thisBooking.dom.wrapper = utils.createDOMFromHTML(generatedHTML);
-    bookingElem.appendChild(thisBooking.dom.wrapper);
+    thisBooking.dom.wrapper = bookingWidget;
+
+    thisBooking.dom.wrapper.innerHTML = generatedHTML;
 
     thisBooking.dom.peopleAmount = thisBooking.dom.wrapper.querySelector(select.booking.peopleAmount);
     thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(select.booking.hoursAmount);
-
     thisBooking.dom.datePicker = thisBooking.dom.wrapper.querySelector(select.widgets.datePicker.wrapper);
     thisBooking.dom.hourPicker = thisBooking.dom.wrapper.querySelector(select.widgets.hourPicker.wrapper);
-
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(select.booking.tables);
-
   }
 
   initWidgets(){
@@ -175,6 +175,7 @@ class Booking {
 
     thisBooking.dom.wrapper.addEventListener('updated', function(){
       thisBooking.updateDOM();
+      console.log('Running updateDOM for addListener');
     });
   }
 }
