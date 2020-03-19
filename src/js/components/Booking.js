@@ -205,20 +205,22 @@ class Booking {
     }
   }
 
-   sendOrder(){       // <- Example from Cart.js
-    const thisCart = this;
+  sendBooked(){       // <- Example from Cart.js
+    const thisBooking = this;
 
     const url = settings.db.url + '/' + settings.db.booking;
 
     const payload = {
       hour: thisBooking.hourPicker.value,
       date: thisBooking.datePicker.value,
-      table: thisBooking.tablePicker.value,
-      ppl: thisBooking.peopleAmount.value,
+      people: thisBooking.peopleAmount.value,
+      duration: thisBooking.hoursAmount.value,
+      table: thisBooking.tableSelected,
     };
+    console.log('payload:', payload);
 
-    for(let product of thisCart.products){
-      payload.products.push(product.getData());
+    for(let table of thisBooking.tables){
+      payload.products.push(table.getData());
     }
 
     const options = {
@@ -231,10 +233,11 @@ class Booking {
 
     fetch(url, options)
       .then(function(response){
-        -> thisBooking.makeBooked();
         return response.json();
-      }) .then(function(parsedResponse){
+      }) 
+      .then(function(parsedResponse){
         console.log('parsedResponse', parsedResponse);
+        thisBooking.makeBooked(payload.hour, payload.date, payload.people, payload.duration, payload.table);
       });
 
   } 
