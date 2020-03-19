@@ -33,16 +33,16 @@ class DatePicker extends BaseWidget{
         }
       ],
       locale: {
-        firstDayOfWeek: 1 // start week on Monday
+        firstDayOfWeek: 1 // start week on Monday  date 2020-03-03 00:00:00 -> 2020-03-02 23:00:00
       },
-      onChange: function(dateStr) {
-        thisWidget.value = dateStr;
+      onChange: function(dates) { 
+        thisWidget.value = dates[0];
       },      
     });
   }
 
   parseValue(value){
-    return value;
+    return utils.dateToStr(utils.addDays(value, 1));
   }
 
   isValid(){

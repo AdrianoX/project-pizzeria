@@ -121,6 +121,8 @@ class Booking {
     thisBooking.date = thisBooking.datePicker.value;
     thisBooking.hour = utils.hourToNumber(thisBooking.hourPicker.value);
 
+    thisBooking.tableSelected = null;
+
     let allAvailable = false;
 
     if (
@@ -138,6 +140,8 @@ class Booking {
       if (!isNaN(tableId)) {
         tableId = parseInt(tableId);
       }
+
+      table.classList.remove(classNames.booking.tableSelected);
 
       if (
         !allAvailable 
@@ -181,36 +185,36 @@ class Booking {
       console.log('Running updateDOM for addListener');
     });
 
-    thisBooking.selectTable();
+    thisBooking.tableSelected = null; 
+    thisBooking.addTableListeners();
   }
 
-  selectTable(){
+  addTableListeners(){
     const thisBooking = this;
 
     for(let table of thisBooking.dom.tables){
       table.addEventListener('click', function(){
-        if (table.classList.contains(classNames.booking.tableBooked)){
+        if (table.classList.contains(classNames.booking.tableSelected)){
           alert('Sorry, this table is currently reserved! Please choose other table : )');
         } else {
-          table.classList.add(classNames.booking.tableBooked);
+          const tableId = table.getAttribute('data-table');
+          thisBooking.tableSelected = parseInt(tableId);
+          table.classList.add(classNames.booking.tableSelected);
         }
       });
     }
   }
 
-  /* sendOrder(){       // <- Example from Cart.js
+   sendOrder(){       // <- Example from Cart.js
     const thisCart = this;
 
-    const url = settings.db.url + '/' + settings.db.order;
+    const url = settings.db.url + '/' + settings.db.booking;
 
     const payload = {
-      address: thisCart.dom.address.value,
-      phone: thisCart.dom.phone.value,
-      totalNumber: thisCart.totalNumber,
-      subtotalNumber: thisCart.subtotalNumber,
-      totalPrice: thisCart.totalPrice,
-      deliveryFee: thisCart.deliveryFee,
-      products: [],
+      hour: thisBooking.hourPicker.value,
+      date: thisBooking.datePicker.value,
+      table: thisBooking.tablePicker.value,
+      ppl: thisBooking.peopleAmount.value,
     };
 
     for(let product of thisCart.products){
@@ -227,12 +231,13 @@ class Booking {
 
     fetch(url, options)
       .then(function(response){
+        -> thisBooking.makeBooked();
         return response.json();
-      }).then(function(parsedResponse){
+      }) .then(function(parsedResponse){
         console.log('parsedResponse', parsedResponse);
       });
 
-  } */
+  } 
 
 }
 
