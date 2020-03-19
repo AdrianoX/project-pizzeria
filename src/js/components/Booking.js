@@ -200,6 +200,8 @@ class Booking {
           const tableId = table.getAttribute('data-table');
           thisBooking.tableSelected = parseInt(tableId);
           table.classList.add(classNames.booking.tableSelected);
+
+          thisBooking.sendBooked();
         }
       });
     }
@@ -219,9 +221,9 @@ class Booking {
     };
     console.log('payload:', payload);
 
-    for(let table of thisBooking.tables){
+    /*for(let table of thisBooking.tables){
       payload.products.push(table.getData());
-    }
+    }*/
 
     const options = {
       method: 'POST',
@@ -237,7 +239,7 @@ class Booking {
       }) 
       .then(function(parsedResponse){
         console.log('parsedResponse', parsedResponse);
-        thisBooking.makeBooked(payload.hour, payload.date, payload.people, payload.duration, payload.table);
+        thisBooking.makeBooked(payload.hour, payload.date, payload.duration, payload.table);
       });
 
   } 
