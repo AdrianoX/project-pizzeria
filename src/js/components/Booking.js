@@ -234,6 +234,7 @@ class Booking {
     console.log('payload:', payload);
 
 
+    
     for(let table of thisBooking.dom.tables){
       if(table.getAttribute(settings.booking.tableIdAttribute) == thisBooking.tableSelected){
         table.classList.add(classNames.booking.tableBooked);
