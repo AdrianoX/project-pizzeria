@@ -212,14 +212,12 @@ class Booking {
           const tableId = table.getAttribute('data-table');
           thisBooking.tableSelected = parseInt(tableId);
           table.classList.add(classNames.booking.tableSelected);
-
-          //thisBooking.sendBooked();
         }
       });
     }
   }
 
-  sendBooked(){       // <- Example from Cart.js
+  sendBooked(){ 
     const thisBooking = this;
 
     const url = settings.db.url + '/' + settings.db.booking;
@@ -235,9 +233,12 @@ class Booking {
     };
     console.log('payload:', payload);
 
-    /*for(let table of thisBooking.tables){
-      payload.products.push(table.getData());
-    }*/
+
+    for(let table of thisBooking.dom.tables){
+      if(table.getAttribute(settings.booking.tableIdAttribute) == thisBooking.tableSelected){
+        table.classList.add(classNames.booking.tableBooked);
+      }
+    }
 
     const options = {
       method: 'POST',
