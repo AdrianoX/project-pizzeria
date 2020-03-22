@@ -77,21 +77,50 @@
   </div>
 
   <script id="template-main-page" type="text/x-handlebars-template">
-    <h1>Test number 1 </h1>
-    <section id='links'>
-      <div class="row">
-        <div class="link">
-          <a href="#order">Order Online</a>
+    <div class="main">
+      <div class="main-page-nav">      
+        <div class="order select">
+          <a class="link" href="#/order">
+            <h1>ORDER ONLINE</h1>
+            <p>Delicious food delivered to your door</p>
+          </a>
         </div>
-        <div class="link">
-          <a href="#booking">Book A Table</a>
+        <div class="booking">
+          <a class="link" href="#/booking">
+            <h1>BOOK A TABLE</h1>
+            <p>Book a table for you and your family</p>
+          </a>
+        </div>
+        <div class="opening-hours">
+          <h1>OPENING HOURS</h1>
+          <p>TUE-SUN, 12PM-12AM</p>
         </div>
       </div>
-      <div class="opening-hours">
-        <h1>Test number 2</h1>
+      <div class="main-page-carousel">
+        <div class="carousel-img">
+          <img src="../images/pizza-3.jpg">
+        </div>
+        <div class="carousel-content">
+          <div class="carousel-text-1 active">
+            <h3>AMAZING SERVICE</h3>
+            <p>Three Michelin star restaurant, MAMMAMIA is known for its authentic Italian cooking. Dishes sprout from family recipes and traditions, but often include a modern twist.</p>
+          </div>
+          <div class="carousel-text-2">
+            <h3>ORDER ONLINE</h3>
+            <p>Delicious catering combinations, available for pickup and perfect for any occasion !</p>
+          </div>
+          <div class="carousel-text-3">
+            <h3>BOOK A TABLE</h3>
+            <p>Very easy tables ordering online ! For free !</p>
+          </div>
+        </div>
+        <div class="carousel-mark">
+          <div class="mark active"></div>
+          <div class="mark"></div>
+          <div class="mark"></div>
+        </div>
       </div>
-        
-    </section>
+    </div>
   </script>
 
   <script id="template-booking-widget" type="text/x-handlebars-template">
