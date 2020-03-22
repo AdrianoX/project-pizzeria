@@ -1,0 +1,131 @@
+
+.main{
+  margin: auto;
+  padding: 50px;
+  background: $color-light;
+  border-bottom: 2px solid ($color-dark, 55%);
+  border-radius: 6px;
+  transform: opacity 500ms;
+}
+
+.main-page-nav{
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 120px;
+      
+  a {
+      text-decoration: none;
+      color:  #fff;
+  }
+  h1 {
+      padding-top: 25px;
+      font-family: $font-header;
+      font-size: 24px;
+      font-weight: $font-normal;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.3s;
+  }
+  p {
+      opacity: 0;
+      font-size: 14px;
+      font-weight: $font-bold;
+  }
+
+  a.link:hover {
+      h1, p {
+        transform: translateY(-33px);
+        transition: all 900ms;
+      }
+
+      p {
+          opacity: 1;
+      }
+  }
+  
+  .order{
+      background-image: url(../images/pizza-1.jpg);
+      border-radius: 5px;
+      flex: 0 0 49%;
+      height: 110px;
+  }
+  .booking{
+      background-image: url(../images/pizza-2.jpg);
+      border-radius: 5px;
+      flex: 0 0 49%;
+      height: 110px;
+  }
+  .opening-hours{
+      background-color: $color-main;
+      border-radius: 5px;
+      flex: 0 0 100%;
+      height: 110px;
+      margin-top: 5px;
+    
+      h1 {
+        padding-top: 6px;
+        margin-top: 6px;
+      }
+
+      p {
+          opacity: 1;
+      }
+  }
+} 
+
+.main-page-carousel{
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .carousel-img{
+    flex: 0 0 33.33%;
+    height: 150px;
+
+    img {
+      height: auto;
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  .carousel-content{
+    > * {
+      display: none;
+    }
+
+    > .active {
+      display: block;
+    }
+
+    
+    padding: 10px;
+    flex: 0 0 66.66%;
+    height: 200px;
+  }
+  
+  .carousel-mark{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .mark{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(221, 221, 221, 0.911);
+      margin: 0 5px;
+    }
+
+    .active{
+        background-color: black;
+    }
+
+  }
+}
