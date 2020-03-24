@@ -8,6 +8,7 @@
   transform: opacity 500ms;
 }
 
+
 .main-page-nav{
   text-align: center;
   color: #fff;
@@ -15,6 +16,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 120px;
+  
       
   a {
     text-decoration: none;
@@ -101,13 +103,9 @@
   }
 
   .carousel-content{
-    > * {
-      display: none;
-    }
-
-    > .active {
-      display: block;
-    }
+    // > .active {
+    //   display: block;
+    // }
     
     h3, p {
       margin-left: 28px;
@@ -120,28 +118,56 @@
     height: 200px;
   }
   
-  .carousel-mark{
+  .flickity-page-dots {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     height: 100%;
-    margin-top: 45px;
-    margin-bottom: -55px;
+    // margin-top: 45px;
+    // margin-bottom: -225px;
+    // margin-left: -90px;
+    margin: 45px 0px -225px -90px;
 
-    .mark{
+    .dots {
       width: 10px;
       height: 10px;
       border-radius: 50%;
       background-color: rgba(221, 221, 221, 0.911);
-      margin: 0 8px;
+      margin: 0 8px;        
     }
 
     .active{
       background-color: black;
     }
   }
+
+  .flickity-button {
+    display: none;
+  }
 }
+//   .carousel-mark{
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     width: 100%;
+//     height: 100%;
+//     margin-top: 45px;
+//     margin-bottom: -55px;
+
+//     .mark{
+//       width: 10px;
+//       height: 10px;
+//       border-radius: 50%;
+//       background-color: rgba(221, 221, 221, 0.911);
+//       margin: 0 8px;
+//     }
+
+//     .active{
+//       background-color: black;
+//     }
+//   }
+// }
 
 .gallery {
   display: flex;
@@ -219,14 +245,9 @@
   }
 }
 
-// BRACKET DISPLAY
-
-.cart {
-  display: none;
-}
-
 // MAIN-NAV DISPLAY
 
-.main-nav {
-  display: none;
-}
+// .main-nav {
+//   visibility: hidden;
+// }
+

@@ -69,6 +69,7 @@ export const select = {
     bookTable: '.booking-form [type="submit"]',
     bookAddress: '.booking-form [name="address"]',
     bookPhone: '.booking-form [name="phone"]',
+    starters: '.booking-form input[name="starter"]'
   },
   nav: {
     links: '.main-nav a',

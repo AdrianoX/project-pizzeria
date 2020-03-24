@@ -64,12 +64,26 @@ const app = {
 
   },
 
-  initMainPage: function(){
+  initMainPage: function() {
     const thisApp = this;
 
     const mainElem = document.querySelector(select.containerOf.main);
 
     thisApp.main = new Main(mainElem);
+
+    const elem = document.querySelector('.carousel-content');
+    // eslint-disable-next-line no-undef
+    new Flickity('.carousel-content', {
+      autoPlay: 3000
+    });
+    
+    // eslint-disable-next-line no-undef
+    new Flickity(elem, {
+      cellAlign: 'left',
+      contain: true
+    });
+
+
   },
 
   initMenu: function(){
