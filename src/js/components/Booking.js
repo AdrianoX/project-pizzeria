@@ -112,8 +112,7 @@ class Booking {
         thisBooking.booked[date][hourBlock] = [];
       }
 
-      thisBooking.booked[date][hourBlock].push(table);
-    }
+      this.booked[date][hourBlock] = this.booked[date][hourBlock].concat(table).filter((number, index, array) => array.indexOf(number) === index);    }
   }
 
   updateDOM() {
@@ -215,6 +214,26 @@ class Booking {
         }
       });
     }
+
+    // this.dom.submit.addEventListener('click', function() {
+    //   event.preventDefault();
+    //   thisBooking.sendBooked();
+    // });
+
+    this.hourInput = this.hourPicker.dom.input;
+    this.dateInput = this.datePicker.dom.input;
+
+    this.hourInput.addEventListener('change', function() {
+      for (let table of thisBooking.dom.tables) {
+        table.classList.remove('selected');
+      }
+    });
+
+    this.dateInput.addEventListener('change', function() {
+      for (let table of thisBooking.dom.tables) {
+        table.classList.remove('selected');
+      }
+    });
   }
 
   sendBooked(){ 
@@ -227,7 +246,7 @@ class Booking {
       date: thisBooking.datePicker.value,
       ppl: thisBooking.peopleAmount.value,
       duration: thisBooking.hoursAmount.value,
-      table: thisBooking.tableSelected,
+      table: [], //thisBooking.tableSelected,
       bookPhone: thisBooking.dom.inputPhoneNumber.value, 
       bookAddress: thisBooking.dom.inputAddress.value, 
       starters: []
@@ -238,6 +257,16 @@ class Booking {
         payload.starters.push(starter.value);
       }
     }
+
+    for (let table of this.dom.tables) {
+      if (table.classList.contains('selected')) {
+        thisBooking.tableId = table.getAttribute(settings.booking.tableIdAttribute);
+        if (!isNaN(thisBooking.tableId)) {
+          thisBooking.tableId = parseInt(thisBooking.tableId);
+        }
+        payload.table.push(thisBooking.tableId);
+      }
+    } 
 
     const options = {
       method: 'POST',
