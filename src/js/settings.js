@@ -33,6 +33,8 @@ export const select = {
       input: 'input.amount',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
+      people: 'input[name="people"]' ,
+      hours: 'input[name="hours"]',
     },
     datePicker: {
       wrapper: '.date-picker',
