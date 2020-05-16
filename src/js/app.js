@@ -22,7 +22,6 @@ const app = {
       }
     }
 
-    //console.log('pageMatchingHash', pageMatchingHash);
     thisApp.activatePage(pageMatchingHash);
 
     for(let link of thisApp.navLinks){
@@ -88,7 +87,6 @@ const app = {
 
   initMenu: function(){
     const thisApp = this;
-    //console.log('thisApp.data:', thisApp.data);
 
     for(let productData in thisApp.data.products){
       new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
@@ -128,7 +126,6 @@ const app = {
         thisApp.initMenu();
       });
       
-    //console.log('thisApp.data', JSON.stringify(thisApp.data));
       
   },
 
@@ -140,16 +137,8 @@ const app = {
 
   },
 
-
-
   init: function(){
     const thisApp = this;
-    //console.log('*** App starting ***');
-    //console.log('thisApp:', thisApp);
-    //console.log('classNames:', classNames);
-    //console.log('settings:', settings);
-    //console.log('templates:', templates);
-
     thisApp.initPages();
     thisApp.initData();
     thisApp.initCart();
@@ -167,5 +156,3 @@ window.addEventListener('hashchange', function() {
 
 
 app.init();
-
-

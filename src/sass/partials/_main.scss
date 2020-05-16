@@ -1,6 +1,4 @@
-
-
-.main{
+.main {
   margin-top: 25px;
   padding: 50px;
   background: $color-light;
@@ -10,8 +8,7 @@
   margin-bottom: 10px;
 }
 
-
-.main-page-nav{
+.main-page-nav {
   text-align: center;
   color: #fff;
   display: flex;
@@ -19,11 +16,10 @@
   justify-content: space-between;
   margin-bottom: 120px;
   margin-top: 15px;
-  
-      
+
   a {
     text-decoration: none;
-    color: #fff;  
+    color: #fff;
   }
 
   h1 {
@@ -43,7 +39,8 @@
   }
 
   a.link:hover {
-    h1, p {
+    h1,
+    p {
       transform: translateY(-33px);
       transition: all 900ms;
     }
@@ -52,28 +49,28 @@
       opacity: 1;
     }
   }
-  
-  .order{
+
+  .order {
     background-image: url(../images/pizza-1.jpg);
     border-radius: 5px;
     flex: 0 0 49%;
     height: 110px;
   }
 
-  .booking{
+  .booking {
     background-image: url(../images/pizza-2.jpg);
     border-radius: 5px;
     flex: 0 0 49%;
     height: 110px;
   }
 
-  .opening-hours{
+  .opening-hours {
     background-color: $color-main;
     border-radius: 5px;
     flex: 0 0 100%;
     height: 110px;
     margin-top: 5px;
-    
+
     h1 {
       padding-top: 6px;
       margin-top: 6px;
@@ -83,15 +80,15 @@
       opacity: 1;
     }
   }
-} 
+}
 
-.main-page-carousel{
+.main-page-carousel {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
-  .carousel-img{
+  .carousel-img {
     flex: 0 0 33.33%;
     height: 150px;
     width: 150px;
@@ -105,7 +102,7 @@
     }
   }
 
-  .carousel-content{
+  .carousel-content {
     // > .active {
     //   display: block;
     // }
@@ -117,8 +114,9 @@
       border-radius: 5px;
       counter-increment: gallery-cell;
     }
-      
-    h3, p {
+
+    h3,
+    p {
       margin-left: 28px;
       margin-top: 10px;
       text-align: left;
@@ -128,8 +126,6 @@
     flex: 0 0 66.66%;
     height: 200px;
   }
-  
-
 
   .flickity-page-dots {
     display: flex;
@@ -147,10 +143,10 @@
       height: 10px;
       border-radius: 50%;
       background-color: rgba(221, 221, 221, 0.911);
-      margin: 0 8px;        
+      margin: 0 8px;
     }
 
-    .active{
+    .active {
       background-color: black;
     }
   }
@@ -233,10 +229,9 @@
     }
   }
 
-
   .img-content:hover {
     .cover {
-      opacity: .4;
+      opacity: 0.4;
       transition: all 1s;
     }
 
@@ -261,6 +256,5 @@
 // MAIN-NAV DISPLAY
 
 // .main-nav{
-//   display: none;   
+//   display: none;
 // }
-
