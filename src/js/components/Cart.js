@@ -26,10 +26,8 @@ class Cart{
     thisCart.dom.form = thisCart.dom.wrapper.querySelector(select.cart.form);
 
     thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
-    //console.log('thisCart.dom.toggleTrigger:', thisCart.dom.toggleTrigger);
 
     thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
-    //console.log('thisCart.dom.productList:', thisCart.dom.productList);
 
     thisCart.dom.phone = thisCart.dom.wrapper.querySelector(select.cart.phone);
 
@@ -108,10 +106,7 @@ class Cart{
 
     thisCart.dom.productList.appendChild(generatedDOM);
 
-    //console.log('adding product', menuProduct);
-
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
-    //console.log('thisCart.products', thisCart.products);
 
     thisCart.update();
   }
@@ -146,7 +141,6 @@ class Cart{
     const index = thisCart.products.indexOf(cartProduct);
 
     const removeItem = thisCart.products.splice(index);
-    //thisCart.products.splice(index);    <-- second option instead of upper code line (const removeItem = thisCart.products.splice(index,1));
     console.log('REMOVE ITEM:', removeItem);
 
     cartProduct.dom.wrapper.remove();
