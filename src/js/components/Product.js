@@ -139,6 +139,7 @@ class Product{
           price -= option.price;
     
           /* END ELSE IF: if option is not selected and option is default */
+          
         }
 
         // [DONE] Create const with products images that have parameter key (paramId) and option key (optionId)
@@ -163,7 +164,8 @@ class Product{
             image.classList.remove(classNames.menuProduct.imageVisible);
           }
         }
-        
+
+
         /* END LOOP: for each optionId in param.options */
       } 
       /* END LOOP: for each paramId in thisProduct.data.params */
