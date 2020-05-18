@@ -17,8 +17,6 @@ class Product{
     thisProduct.initOrderForm();
     thisProduct.initAmountWidget();
     thisProduct.processOrder();
-
-    //console.log('new Product:', thisProduct);
   }
 
   renderInMenu(){
@@ -60,9 +58,6 @@ class Product{
 
   initAccordion(){
     const thisProduct = this;
-    //console.log('thisProduct:', thisProduct);
-
-    //thisProduct.clickableElement = thisProduct.accordionTrigger;   <---  unnecessary ? 
 
     /* find the clickable trigger (the element that should react to clicking) */
     const clickableTrigger = thisProduct.element;
@@ -86,7 +81,6 @@ class Product{
 
   initOrderForm(){
     const thisProduct = this;
-    //console.log('thisProduct:', thisProduct);
 
     thisProduct.form.addEventListener('submit', function(event){
       event.preventDefault();
@@ -181,7 +175,6 @@ class Product{
     /* set the contents of thisProduct.priceElem to be the value of variable price */
     thisProduct.priceElem.innerHTML = thisProduct.price;
     //console.log('params', thisProduct.params);
-    
   }
 
   initAmountWidget(){
@@ -200,8 +193,6 @@ class Product{
 
     thisProduct.name = thisProduct.data.name;
     thisProduct.amount = thisProduct.amountWidget.value;
-
-    // app.cart.add(thisProduct);
 
     const event = new CustomEvent('add-to-cart', {
       bubbles: true,
