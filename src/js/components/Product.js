@@ -35,7 +35,6 @@ class Product{
 
     /* add element to menu */
     menuContainer.appendChild(thisProduct.element);
-
   }
 
   getElements(){
@@ -127,7 +126,7 @@ class Product{
         //console.log('optionSelected::', optionSelected);
         if(optionSelected && !option.default) {
           /* add price of option to variable price */
-          //price += option.price;    ==    price = price + option.price;  (code line below)
+
           price = price + option.price;
             
           /* END IF: if option is selected and option is not default */
@@ -137,14 +136,11 @@ class Product{
           /* deduct price of option from price */
           //price = price - option.price;  ==  price -= option.price; (code line below)
           price -= option.price;
-    
           /* END ELSE IF: if option is not selected and option is default */
-          
         }
 
         // [DONE] Create const with products images that have parameter key (paramId) and option key (optionId)
         const images = thisProduct.imageWrapper.querySelectorAll('.' + paramId + '-' + optionId);
-        //console.log('images:', images);
         // [DONE] Start "if" product have image and is currently selected
         if (optionSelected){
           if(!thisProduct.params[paramId]){
@@ -164,7 +160,6 @@ class Product{
             image.classList.remove(classNames.menuProduct.imageVisible);
           }
         }
-
 
         /* END LOOP: for each optionId in param.options */
       } 

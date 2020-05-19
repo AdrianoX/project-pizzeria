@@ -13,7 +13,6 @@ class Booking {
     thisBooking.render(bookingWidget);
     thisBooking.initWidgets();
     thisBooking.getData();
-    // thisBooking.addTableListeners();
   }
 
   getData() {
@@ -37,7 +36,6 @@ class Booking {
       ],
     };
 
-    //console.log('getData params:', params);
 
     const urls = {
       booking:      settings.db.url + '/' + settings.db.booking + '?' + params.booking.join('&'),
@@ -45,7 +43,6 @@ class Booking {
       eventsRepeat: settings.db.url + '/' + settings.db.event + '?' + params.eventsRepeat.join('&'),
     };
 
-    //console.log('getData urls:', urls);
     Promise.all([
       fetch(urls.booking),
       fetch(urls.eventsCurrent),
@@ -63,8 +60,6 @@ class Booking {
       })
       .then(function([bookings, eventsCurrent, eventsRepeat]) {
         console.log('bookings from API', bookings);
-        // console.log(eventsCurrent);
-        // console.log(eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
   }
@@ -133,7 +128,6 @@ class Booking {
       allAvailable = true;
     }
 
-    //console.log('thisBooking.dom.tables', thisBooking.dom.tables);
 
     for (let table of thisBooking.dom.tables) {
       let tableId = table.getAttribute(settings.booking.tableIdAttribute);

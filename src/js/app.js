@@ -144,7 +144,6 @@ const app = {
     thisApp.initCart();
     thisApp.initBooking();
     thisApp.initMainPage();
-
   },
 
 };
@@ -153,6 +152,5 @@ window.addEventListener('hashchange', function() {
   const idFromHash = window.location.hash.replace('#/', '');
   app.activatePage(idFromHash);
 });
-
 
 app.init();
