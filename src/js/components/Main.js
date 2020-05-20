@@ -13,7 +13,6 @@ class Main {
     thisMain.displayMainPage();
   }
 
-
   displayMainPage(){
     const thisMain = this;
 

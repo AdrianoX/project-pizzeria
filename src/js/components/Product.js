@@ -54,7 +54,6 @@ class Product{
     thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
   }
 
-
   initAccordion(){
     const thisProduct = this;
 
@@ -77,7 +76,6 @@ class Product{
     });
   }
   
-
   initOrderForm(){
     const thisProduct = this;
 
@@ -186,7 +184,6 @@ class Product{
 
   addToCart(){
     const thisProduct = this;
-
 
     thisProduct.name = thisProduct.data.name;
     thisProduct.amount = thisProduct.amountWidget.value;

@@ -209,11 +209,6 @@ class Booking {
       });
     }
 
-    // this.dom.submit.addEventListener('click', function() {
-    //   event.preventDefault();
-    //   thisBooking.sendBooked();
-    // });
-
     this.hourInput = this.hourPicker.dom.input;
     this.dateInput = this.datePicker.dom.input;
 
@@ -240,7 +235,7 @@ class Booking {
       date: thisBooking.datePicker.value,
       ppl: thisBooking.peopleAmount.value,
       duration: thisBooking.hoursAmount.value,
-      table: [], //thisBooking.tableSelected,
+      table: [], 
       bookPhone: thisBooking.dom.inputPhoneNumber.value, 
       bookAddress: thisBooking.dom.inputAddress.value, 
       starters: []

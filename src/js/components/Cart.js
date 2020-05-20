@@ -95,7 +95,6 @@ class Cart{
       }).then(function(parsedResponse){
         console.log('parsedResponse', parsedResponse);
       });
-
   }
 
   add(menuProduct){
@@ -133,7 +132,6 @@ class Cart{
         elem.innerHTML = thisCart[key];
       }
     }
-
   }
 
   remove(cartProduct){
@@ -146,7 +144,6 @@ class Cart{
     cartProduct.dom.wrapper.remove();
     thisCart.update();
   }
-
 }
 
 export default Cart;
