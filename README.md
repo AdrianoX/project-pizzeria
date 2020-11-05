@@ -1,1 +1,1 @@
-https://whispering-hollows-68675.herokuapp.com/#/main
+https://whispering-hollows-68675.herokuapp.com/
